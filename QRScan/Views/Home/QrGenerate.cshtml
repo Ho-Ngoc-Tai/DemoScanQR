@@ -1,0 +1,22 @@
+﻿@using (Html.BeginForm("QrGenerate", "Home", FormMethod.Post))
+{
+    <div>
+        <label for="url">URL:</label>
+        <input type="text" id="url" name="url" />
+        <button type="submit">Generate QR Code</button>
+    </div>
+}
+
+@if (ViewBag.QRCodeImage != null)
+{
+    <div>
+        <img src="@ViewBag.QRCodeImage" alt="QR Code" />
+    </div>
+}
+
+@if (ViewBag.Message != null)
+{
+    <div>
+        <p>@ViewBag.Message</p>
+    </div>
+}
