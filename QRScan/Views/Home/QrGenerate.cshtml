@@ -1,11 +1,11 @@
-﻿@using (Html.BeginForm("QrGenerate", "Home", FormMethod.Post))
+﻿@*@using (Html.BeginForm("QrGenerate", "Home", FormMethod.Post))
 {
     <div>
         <label for="url">URL:</label>
         <input type="text" id="url" name="url" />
         <button type="submit">Generate QR Code</button>
     </div>
-}
+}*@
 
 @if (ViewBag.QRCodeImage != null)
 {
@@ -14,9 +14,10 @@
     </div>
 }
 
-@if (ViewBag.Message != null)
+@*@if (ViewBag.Message != null)
 {
     <div>
         <p>@ViewBag.Message</p>
     </div>
-}
+}*@
+

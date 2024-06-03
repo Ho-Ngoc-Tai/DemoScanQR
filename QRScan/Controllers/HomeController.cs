@@ -9,6 +9,7 @@ namespace QRScan.Controllers
 {
     public class HomeController : Controller
     {
+        private QRDatabaseContext db = new QRDatabaseContext();
         public ActionResult Index()
         {
             return View();
@@ -28,27 +29,38 @@ namespace QRScan.Controllers
             return View();
         }
 
-        public ActionResult QrGenerate()
+        public ActionResult CardView()
         {
+            // Gán URL cố định trong code
+            string fixedUrl = "https://github.com/Ho-Ngoc-Tai";
+
+            QRGenerator generator = new QRGenerator();
+            byte[] qrCodeBytes = generator.GenerateQRCode(fixedUrl);
+            string qrCodeBase64 = Convert.ToBase64String(qrCodeBytes);
+            ViewBag.QRCodeImage = "data:image/png;base64," + qrCodeBase64;
+           
             return View();
         }
 
-        // Xử lý yêu cầu POST để tạo mã QR
-        [HttpPost]
-        public ActionResult QrGenerate(string url)
+        public ActionResult QrGenerate()
         {
-            if (string.IsNullOrEmpty(url))
-            {
-                ViewBag.Message = "URL không được để trống.";
-                return View("QrGenerate");
-            }
+            // Gán URL cố định trong code
+            string fixedUrl = "https://github.com/Ho-Ngoc-Tai";
 
             QRGenerator generator = new QRGenerator();
-            byte[] qrCodeBytes = generator.GenerateQRCode(url);
+            byte[] qrCodeBytes = generator.GenerateQRCode(fixedUrl);
             string qrCodeBase64 = Convert.ToBase64String(qrCodeBytes);
             ViewBag.QRCodeImage = "data:image/png;base64," + qrCodeBase64;
 
-            return View("QrGenerate");
+            return View();
+        }
+
+        public ActionResult RedirectAfterScan(string userId)
+        {
+            // Xử lý logic sau khi người dùng quét mã QR và truy cập URL này
+            ViewBag.UserId = userId;
+            ViewBag.Message = "Bạn đã quét mã QR thành công.";
+            return View();
         }
     }
 }
