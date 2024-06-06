@@ -118,3 +118,4 @@ D:\INTERN\QRScan\QRScan\bin\System.Memory.xml
 D:\INTERN\QRScan\QRScan\bin\System.Numerics.Vectors.xml
 D:\INTERN\QRScan\QRScan\bin\System.Runtime.CompilerServices.Unsafe.xml
 D:\INTERN\QRScan\QRScan\bin\System.Threading.Tasks.Extensions.xml
+D:\INTERN\QRScan\QRScan\bin\QRCoder.dll

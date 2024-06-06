@@ -1,0 +1,770 @@
+﻿
+@{
+    ViewBag.Title = "NameCard";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <style>
+        body {
+            background-image: url('https://png.pngtree.com/background/20230408/original/pngtree-gradient-blue-background-abstract-gold-luxury-picture-image_2338350.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* CSS cho khung màu xám */
+        .selected {
+            border: 2px solid transperant;
+            border-radius: 30px;
+            background: #e0e0e0;
+            height: 35px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <section id="home" class="content-section">
+            <div class="image-container">
+                <div class="circular-image">
+                    <img src="~/assets/images/main.jpg" alt="Profile Image">
+                </div>
+                <div class="share-icon">
+                    <img src="~/assets/images/icon-share.png" alt="Share Icon">
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal -->
+        <div id="shareModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Share this profile:</p>
+                <!-- Add your share options here -->
+                <button>Share on Facebook</button>
+                <button>Share on Twitter</button>
+                <button>Copy Link</button>
+            </div>
+        </div>
+
+        <div class="text-container">
+            <p class="name">TRƯƠNG QUANG VIÊN</p>
+            <p class="position">GIÁM ĐỐC CÔNG THƯƠNG MẠI TNHH SUNHITECH</p>
+            <!-- Button with image icon -->
+            <div class="button-container">
+                <button class="service-store-btn">
+                    <img src="~/assets/images/VanY_Logo png.png" alt="Store Icon" class="icon-store">
+                    CỬA HÀNG - DỊCH VỤ
+                </button>
+            </div>
+
+            <div class="buttons-container">
+                <button class="icon-button">
+                    <img src="~/assets/images/icon-phone.png" alt="Phone Icon" class="button-icon">
+                    ĐIỆN THOẠI
+                </button>
+                <button class="icon-button">
+                    <img src="~/assets/images/icon-save.png" alt="Save Icon" class="button-icon">
+                    LƯU DANH BẠ
+                </button>
+                <button class="icon-button">
+                    <img src="~/assets/images/icon-message.png" alt="Message Icon" class="button-icon">
+                    MESSAGE
+                </button>
+            </div>
+
+            <div class="button-row">
+                <a href="#"><button class="secondary-button"><img src="~/assets/images/icon-phone2.png" alt="Phone"> GỌI CHO VIÊN</button></a>
+            </div>
+            <div class="button-row">
+                <a href="#"><button class="secondary-button"><img src="~/assets/images/icon-zalo.png" alt="Zalo"> ZALO CỦA VIÊN</button></a>
+            </div>
+            <div class="button-row">
+                <a href="#"><button class="secondary-button"><img src="~/assets/images/icon-gmail.png" alt="Email"> MAIL CỦA VIÊN</button></a>
+            </div>
+            <div class="button-row">
+                <a href="#"><button class="secondary-button"><img src="~/assets/images/icon-facebook.png" alt="Facebook"> FACEBOOK CỦA VIÊN</button></a>
+            </div>
+
+            <div class="info-container">
+                <div class="info-row">
+                    <img src="~/assets/images/icon-birthday.png" alt="Birthday">
+                    <span>30/03/2002</span>
+                </div>
+                <div class="info-row">
+                    <img src="~/assets/images/icon-location.png" alt="Address">
+                    <span>Địa chỉ: 123 Đường ABC, Thành phố XYZ</span>
+                </div>
+                <div class="info-row">
+                    <img src="~/assets/images/icon-youtube.png" alt="YouTube">
+                    <span><a href="#">Kênh YouTube của VIÊN</a></span>
+                </div>
+            </div>
+            <section id="banking" class="content-section">
+                <div class="bank-account-container">
+                    <h3 class="bank-account-title">Tài khoản ngân hàng</h3>
+                    <div class="info-row">
+                        <img src="~/assets/images/icon-acb.png" alt="Bank 1">
+                        <span class="copyable" data-account="123456789">Số tài khoản: 123456789 - Ngân hàng Mbbank - Chủ tài khoản: TRƯƠNG QUANG VIÊN</span>
+                    </div>
+                    <div class="info-row">
+                        <img src="~/images/bank1-icon.png" alt="Bank 2">
+                        <span class="copyable" data-account="987654321">Số tài khoản: 987654321 - Ngân hàng Vietcombank - Chủ tài khoản: TRƯƠNG QUANG VIÊN</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="content-section">
+                <!-- Khung kinh nghiệm làm việc -->
+                <div class="experience-container">
+                    <h3 class="experience-title">Kinh nghiệm làm việc</h3>
+                    <div class="experience-item">
+                        <img src="~/images/logo.png" alt="Company Icon" class="company-icon">
+                        <div class="experience-info">
+                            <span class="experience-time">01/2020 - 12/2020</span>
+                            <span class="experience-position">Chức vụ: Nhân viên</span>
+                            <span class="experience-company">Công ty: ABC Corp</span>
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <img src="~/images/logo.png" alt="Company Icon" class="company-icon">
+                        <div class="experience-info">
+                            <span class="experience-time">01/2021 - 12/2022</span>
+                            <span class="experience-position">Chức vụ: Trưởng phòng</span>
+                            <span class="experience-company">Công ty: XYZ Ltd</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="profile" class="content-section">
+                <!-- Khung Hồ sơ của tôi -->
+                <div class="profile-container">
+                    <h3 class="profile-title">Hồ sơ của tôi</h3>
+                    <div class="profile-row">
+                        <div class="profile-section">
+                            <div class="profile-header">
+                                <img src="~/images/icon-check-circle.png" alt="Check Circle Icon" class="profile-icon">
+                                <h4 class="profile-section-title">Giới thiệu công việc</h4>
+                            </div>
+                            <p class="profile-section-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet semper risus. Ut convallis nulla vel ligula rutrum, eget sodales nulla faucibus.</p>
+                        </div>
+                        <div class="profile-section">
+                            <div class="profile-header">
+                                <img src="~/images/icon-check-circle.png" alt="Check Circle Icon" class="profile-icon">
+                                <h4 class="profile-section-title">Thói quen, sở thích</h4>
+                            </div>
+                            <p class="profile-section-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet semper risus. Ut convallis nulla vel ligula rutrum, eget sodales nulla faucibus.</p>
+                        </div>
+                    </div>
+                    <div class="profile-row">
+                        <div class="profile-section">
+                            <div class="profile-header">
+                                <img src="~/images/icon-check-circle.png" alt="Check Circle Icon" class="profile-icon">
+                                <h4 class="profile-section-title">Bí mật bản thân</h4>
+                            </div>
+                            <p class="profile-section-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet semper risus. Ut convallis nulla vel ligula rutrum, eget sodales nulla faucibus.</p>
+                        </div>
+                        <div class="profile-section">
+                            <div class="profile-header">
+                                <img src="~/images/icon-check-circle.png" alt="Check Circle Icon" class="profile-icon">
+                                <h4 class="profile-section-title">Khát khao cháy bỏng</h4>
+                            </div>
+                            <p class="profile-section-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet semper risus. Ut convallis nulla vel ligula rutrum, eget sodales nulla faucibus.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="business" class="content-section">
+                <div class="company-info-container">
+                    <h3 class="company-title">Giới thiệu doanh nghiệp</h3>
+                    <div class="company-details">
+                        <div class="company-image">
+                            <img src="~/images/logo.png" alt="Company Image">
+                        </div>
+                        <div class="company-description">
+                            <p>Mô tả công ty ở đây</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="achievements" class="content-section">
+                <div class="goal-achievement-container">
+                    <h3 class="title">Mục tiêu - Thành tựu - Mối quan hệ - Kĩ năng</h3>
+                    <div class="goal-section">
+                        <div class="goal-box">
+                            <div class="goal-header">
+                                <img src="~/images/goal-icon.png" alt="Goal Icon" class="goal-icon">
+                                <h4 class="goal-title">Mục tiêu</h4>
+                            </div>
+
+                        </div>
+                        <div class="goal-box">
+                            <div class="goal-header">
+                                <img src="~/images/achievement-icon.png" alt="Achievement Icon" class="goal-icon">
+                                <h4 class="goal-title">Thành tựu</h4>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="goal-section">
+                        <div class="goal-box">
+                            <div class="goal-header">
+                                <img src="~/images/relationship-icon.png" alt="Relationship Icon" class="goal-icon">
+                                <h4 class="goal-title">Mối quan hệ</h4>
+                            </div>
+
+                        </div>
+                        <div class="goal-box">
+                            <div class="goal-header">
+                                <img src="~/images/skill-icon.png" alt="Skill Icon" class="goal-icon">
+                                <h4 class="goal-title">Kĩ năng</h4>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="quotes" class="content-section">
+                <div class="company-info-container1">
+                    <h3 class="company-title1">PHƯƠNG CHÂM SỐNG CỦA QUANG VIÊN</h3>
+                    <div class="company-details1">
+                        <div class="company-image1">
+                            <img src="~/images/profile.jpg" alt="Company Image">
+                        </div>
+                        <div class="company-description1">
+                            <p>SỐNG VÀ LÀM VIỆC THEO TẤM GƯƠNG ĐẠO ĐỨC HỒ CHÍ MINH</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </section>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var copyableElements = document.querySelectorAll(".copyable");
+
+                copyableElements.forEach(function (element) {
+                    element.addEventListener("click", function () {
+                        // Loại bỏ lớp 'selected' từ tất cả các phần tử cha 'info-row'
+                        var allInfoRows = document.querySelectorAll(".info-row");
+                        allInfoRows.forEach(function (row) {
+                            row.classList.remove("selected");
+                        });
+
+                        // Thêm lớp 'selected' vào phần tử cha 'info-row' của phần tử được click
+                        var parent = this.closest(".info-row");
+                        if (parent) {
+                            parent.classList.add("selected");
+                        }
+
+                        var accountNumber = this.getAttribute("data-account");
+                        navigator.clipboard.writeText(accountNumber).then(function () {
+                            alert("Đã copy số tài khoản: " + accountNumber);
+                        }).catch(function (error) {
+                            console.error("Copy failed", error);
+                        });
+                    });
+                });
+            });
+
+        </script>
+
+        @*<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var copyableElements = document.querySelectorAll(".copyable");
+
+            copyableElements.forEach(function (element) {
+                element.addEventListener("click", function () {
+                    var accountNumber = this.getAttribute("data-account");
+                    navigator.clipboard.writeText(accountNumber).then(function () {
+                        alert("Đã copy số tài khoản: " + accountNumber);
+                    }).catch(function (error) {
+                        console.error("Copy failed", error);
+                    });
+                });
+            });
+        });</script>*@
+
+        <script>
+            document.querySelectorAll('.header-buttons a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href').split('#')[1];
+                    const targetElement = document.getElementById(targetId);
+                    const headerHeight = document.querySelector('.header-container').offsetHeight;
+
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - headerHeight,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        </script>
+
+
+</body>
+</html>
+
+
+
+<style>
+
+    .share-icon {
+        position: absolute;
+        top: 150px;
+        right: 500px;
+        background-color: white; /* Optional: Add a background to make it more visible */
+        border-radius: 50%;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+        .share-icon img {
+            width: 30px; /* Adjust size as needed */
+            height: 30px; /* Adjust size as needed */
+        }
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .circular-image {
+        width: 250px; /* Kích thước của hình tròn */
+        height: 250px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+        .circular-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    .text-container {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .name {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: white;
+    }
+
+    .position {
+        font-size: 1.2em;
+        color: white;
+    }
+
+
+    /* Định dạng button "CỬA HÀNG - DỊCH VỤ" */
+    .service-store-btn {
+        display: flex;
+        align-items: center; /* Căn giữa icon và văn bản theo chiều dọc */
+        justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+        padding: 15px 20px; /* Tăng padding để button lớn hơn */
+        border: none; /* Không có viền */
+        border-radius: 5px; /* Bo tròn góc */
+        background-color: #1dedff9e; /* Màu nền của button */
+        color: white; /* Màu văn bản của button */
+        font-size: 1em; /* Kích thước chữ */
+        cursor: pointer; /* Con trỏ chuột khi hover */
+        width: 490px; /* Chiều dài cụ thể */
+        text-align: center; /* Căn giữa văn bản */
+        margin: 20px auto; /* Căn giữa button theo chiều ngang */
+    }
+
+    /* Định dạng icon "CỬA HÀNG - DỊCH VỤ" */
+    .icon-store {
+        width: 30px; /* Chiều rộng của icon */
+        height: 30px; /* Chiều cao của icon */
+        margin-right: 10px; /* Khoảng cách giữa icon và văn bản */
+    }
+
+    /* Định dạng container chứa các button */
+    .buttons-container {
+        display: flex;
+        justify-content: center; /* Căn giữa các button theo chiều ngang */
+        gap: 20px; /* Khoảng cách giữa các button */
+        margin-top: 20px; /* Tùy chọn: Tạo khoảng cách phía trên các button */
+    }
+
+    /* Định dạng các button */
+    .icon-button {
+        display: flex;
+        flex-direction: column; /* Xếp icon và văn bản theo chiều dọc */
+        align-items: center; /* Căn giữa icon và văn bản theo chiều ngang */
+        padding: 15px 20px; /* Tăng padding để button lớn hơn */
+        border: none; /* Không có viền */
+        border-radius: 5px; /* Bo tròn góc */
+        background-color: #1dedff9e; /* Màu nền của button */
+        color: white; /* Màu văn bản của button */
+        font-size: 1em; /* Kích thước chữ */
+        cursor: pointer; /* Con trỏ chuột khi hover */
+        width: 150px; /* Chiều rộng cố định cho button */
+        text-align: center; /* Căn giữa văn bản */
+    }
+
+    /* Định dạng icon của các button */
+    .button-icon {
+        width: 30px; /* Chiều rộng của icon */
+        height: 30px; /* Chiều cao của icon */
+        margin-bottom: 5px; /* Khoảng cách giữa icon và văn bản */
+    }
+
+    .secondary-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 15px 0;
+        padding: 10px 20px;
+        width: 490px;
+        font-size: 1em;
+        font-weight: bold;
+        color: white;
+        background-color: #22a1a0a8;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        text-transform: uppercase;
+        text-decoration: none;
+        outline: none;
+    }
+
+        .secondary-button img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .secondary-button:hover {
+            background-color: #60f2ff;
+        }
+
+    .button-row a {
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    .info-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 446px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f8f9fa;
+    }
+
+
+    .bank-account-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 75%; /* Chiếm 3/4 màn hình */
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f8f9fa;
+    }
+
+    .bank-account-title {
+        font-size: 1.5em; /* Tăng kích thước chữ của tiêu đề */
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .info-row {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Căn giữa dòng */
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+        .info-row img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .info-row span {
+            font-size: 1em;
+        }
+
+        .info-row a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+            .info-row a:hover {
+                text-decoration: underline;
+            }
+
+    .copyable {
+        cursor: pointer;
+        width: fit-content;
+    }
+
+        .copyable:hover {
+            color: #0056b3;
+        }
+
+    /* CSS cho mục kinh nghiệm làm việc */
+    .experience-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 75%; /* Chiếm 3/4 màn hình */
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f8f9fa;
+    }
+
+    .experience-title {
+        font-size: 1.5em; /* Kích thước chữ tiêu đề */
+        font-weight: bold; /* Chữ đậm */
+        margin-bottom: 15px; /* Khoảng cách dưới */
+    }
+
+    .experience-item {
+        display: flex; /* Hiển thị các mục kinh nghiệm làm việc theo chiều ngang */
+        align-items: center; /* Căn giữa theo chiều dọc */
+        margin-bottom: 20px; /* Khoảng cách dưới giữa các mục */
+    }
+
+    .company-icon {
+        width: 30px; /* Kích thước của icon công ty */
+        height: auto;
+        margin-right: 10px; /* Khoảng cách phải giữa icon và nội dung */
+    }
+
+    .experience-info {
+        flex: 1; /* Chia sẻ đều không gian trống */
+    }
+
+    .experience-time, .experience-position, .experience-company {
+        font-size: 1em; /* Kích thước chữ */
+        margin-bottom: 5px;
+    }
+    /* CSS cho khung Hồ sơ của tôi */
+    .profile-container {
+        width: 75%;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f8f9fa;
+    }
+
+    .profile-title {
+        font-size: 1.8em;
+        font-weight: bold;
+        margin-bottom: 15px;
+        text-align: left;
+    }
+
+    .profile-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .profile-section {
+        width: 45%;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    .profile-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .profile-icon {
+        width: 32px; /* Tăng kích thước icon */
+        height: 32px; /* Tăng kích thước icon */
+        margin-right: 10px; /* Khoảng cách giữa icon và tiêu đề */
+    }
+
+    .profile-section-title {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    .profile-section-content {
+        font-size: 1em;
+        margin: 0;
+        padding-left: 42px; /* Tạo khoảng cách giữa nội dung và icon/tiêu đề */
+    }
+
+
+
+    .company-info-container {
+        width: 75%; /* Chiếm 3/4 màn hình */
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #ADAEAF;
+    }
+
+    .company-title {
+        font-size: 1.8em;
+        font-weight: bold;
+        margin-bottom: 15px;
+        text-align: left; /* Căn trái tiêu đề */
+    }
+
+    .company-details {
+        display: flex;
+    }
+
+    .company-image {
+        width: 50%; /* Chiếm 1 nửa khung hình bên trái */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .company-image img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+    .company-description {
+        width: 50%; /* Chiếm 1 nửa khung hình bên phải */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center; /* Căn giữa dòng */
+        padding-left: 20px;
+    }
+
+        .company-description p {
+            font-size: 1.5em; /* Kích thước chữ phù hợp */
+            margin: 0; /* Xóa bỏ margin mặc định của thẻ p */
+        }
+
+
+    .goal-achievement-container {
+        width: 75%;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f8f9fa;
+    }
+
+    .title {
+        font-size: 1.8em;
+        font-weight: bold;
+        margin-bottom: 15px;
+        text-align: left;
+    }
+
+    .goal-section {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .goal-box {
+        width: 45%;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    .goal-header {
+        display: flex;
+        align-items: center; /* Căn các phần tử trong hàng dọc theo đỉnh của nhau */
+        margin-bottom: 10px;
+    }
+
+    .goal-icon {
+        flex: 3;
+        width: 100%; /* Tăng kích thước icon */
+        height: auto; /* Duy trì tỉ lệ icon */
+    }
+
+    .goal-title {
+        flex: 7;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 0; /* Xóa margin */
+    }
+
+
+
+
+    .company-info-container1 {
+        width: 75%; /* Chiếm 3/4 màn hình */
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f8f9fa;
+    }
+
+    .company-title1 {
+        font-size: 1.8em;
+        font-weight: bold;
+        margin-bottom: 15px;
+        text-align: left; /* Căn trái tiêu đề */
+    }
+
+    .company-details1 {
+        display: flex;
+    }
+
+    .company-image1 {
+        width: 50%; /* Chiếm 1 nửa khung hình bên trái */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .company-image1 img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+    .content-section {
+        padding: 20px;
+        margin: 10px 0;
+    }
+
+        .content-section::before {
+            content: "";
+            display: block;
+        }
+</style>

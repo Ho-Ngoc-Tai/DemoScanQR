@@ -31,14 +31,14 @@ namespace QRScan.Controllers
 
         public ActionResult CardView()
         {
-            // Gán URL cố định trong code
-            string fixedUrl = "https://github.com/Ho-Ngoc-Tai";
+            // Gán URL của trang view NameCard.cshtml
+            string viewUrl = Url.Action("NameCard", "Home", null, Request.Url.Scheme);
 
             QRGenerator generator = new QRGenerator();
-            byte[] qrCodeBytes = generator.GenerateQRCode(fixedUrl);
+            byte[] qrCodeBytes = generator.GenerateQRCode(viewUrl);
             string qrCodeBase64 = Convert.ToBase64String(qrCodeBytes);
             ViewBag.QRCodeImage = "data:image/png;base64," + qrCodeBase64;
-           
+
             return View();
         }
 
@@ -60,6 +60,24 @@ namespace QRScan.Controllers
             // Xử lý logic sau khi người dùng quét mã QR và truy cập URL này
             ViewBag.UserId = userId;
             ViewBag.Message = "Bạn đã quét mã QR thành công.";
+            return View();
+        }
+
+        //public ActionResult QrGenerate()
+        //{
+        //    // Gán URL của trang view NameCard.cshtml
+        //    string viewUrl = Url.Action("NameCard", "Home", null, Request.Url.Scheme);
+
+        //    QRGenerator generator = new QRGenerator();
+        //    byte[] qrCodeBytes = generator.GenerateQRCode(viewUrl);
+        //    string qrCodeBase64 = Convert.ToBase64String(qrCodeBytes);
+        //    ViewBag.QRCodeImage = "data:image/png;base64," + qrCodeBase64;
+
+        //    return View();
+        //}
+
+        public ActionResult NameCard()
+        {
             return View();
         }
     }
