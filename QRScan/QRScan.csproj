@@ -205,6 +205,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\images\achievement-icon.png" />
+    <Content Include="assets\images\goal-icon.png" />
+    <Content Include="assets\images\icon-check-circle.png" />
+    <Content Include="assets\images\icon-mbbank.png" />
     <Content Include="assets\images\icon-acb.png" />
     <Content Include="assets\images\icon-birthday.png" />
     <Content Include="assets\images\icon-facebook.png" />
@@ -218,7 +222,9 @@
     <Content Include="assets\images\icon-youtube.png" />
     <Content Include="assets\images\icon-zalo.png" />
     <Content Include="assets\images\main.jpg" />
-    <Content Include="assets\images\VanY_Logo png.png" />
+    <Content Include="assets\images\relationship-icon.png" />
+    <Content Include="assets\images\skill-icon.png" />
+    <Content Include="assets\images\VanY_Logo.png" />
     <Content Include="Content\assets\bg-card.jpg" />
     <Content Include="Content\assets\bg-card2.jpg" />
     <Content Include="Content\assets\bg-card3.jpg" />
