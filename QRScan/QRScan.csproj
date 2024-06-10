@@ -219,6 +219,7 @@
     <Content Include="assets\images\icon-phone2.png" />
     <Content Include="assets\images\icon-save.png" />
     <Content Include="assets\images\icon-share.png" />
+    <Content Include="assets\images\icon-vcb.jpg" />
     <Content Include="assets\images\icon-youtube.png" />
     <Content Include="assets\images\icon-zalo.png" />
     <Content Include="assets\images\main.jpg" />
@@ -231,6 +232,7 @@
     <Content Include="Content\assets\bg-card4.jpg" />
     <Content Include="Content\assets\bg-card5.jpg" />
     <Content Include="Content\assets\bg-card6.jpg" />
+    <Content Include="Content\assets\icon-gmail.png" />
     <Content Include="Content\assets\icon.png" />
     <Content Include="Content\assets\logo.png" />
     <Content Include="Content\assets\QR.png" />

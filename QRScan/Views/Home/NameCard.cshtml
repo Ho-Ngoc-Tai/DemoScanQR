@@ -1,4 +1,4 @@
-﻿
+﻿﻿
 @{
     ViewBag.Title = "NameCard";
 }
@@ -11,7 +11,7 @@
     <title>@ViewBag.Title</title>
     <style>
         body {
-            background-image: url('https://img.freepik.com/free-vector/realistic-luxury-background_23-2149326197.jpg?t=st=1717744184~exp=1717747784~hmac=87c79e558d1370679d462342966a3a1c0ce36161e786db04c7a37abab1dd0335&w=2000');
+            background-image: url('https://img.freepik.com/free-vector/abstract-geometric-wireframe-background_52683-59421.jpg?t=st=1718012827~exp=1718016427~hmac=dd71259534293c98a5a637fb08662c5e004a3d09f28d7eadaee139bb05a7650e&w=2000');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -25,7 +25,6 @@
             background: #e0e0e0;
             height: 35px;
         }
-
     </style>
 </head>
 <body>
@@ -45,17 +44,17 @@
         <div id="shareModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <p>Share this profile:</p>
+                <p>Chia sẻ hồ sơ này:</p>
                 <!-- Add your share options here -->
-                <button>Share on Facebook</button>
-                <button>Share on Twitter</button>
-                <button>Copy Link</button>
+                <button>Chia sẻ trên Facebook</button>
+                <button>Chia sẻ trên Twitter</button>
+                <button>Sao chép liên kết</button>
             </div>
         </div>
 
         <div class="text-container">
             <p class="name">TRƯƠNG QUANG VIÊN</p>
-            <p class="position">GIÁM ĐỐC CÔNG THƯƠNG MẠI TNHH SUNHITECH</p>
+            <p class="position">GIÁM ĐỐC CÔNG TY THƯƠNG MẠI TNHH SUNHITECH</p>
             <!-- Button with image icon -->
             <div class="button-container">
                 <button class="service-store-btn">
@@ -82,12 +81,15 @@
             <div class="button-row">
                 <a href="#"><button class="secondary-button"><img src="~/assets/images/icon-phone2.png" alt="Phone"> GỌI CHO VIÊN</button></a>
             </div>
+
             <div class="button-row">
                 <a href="#"><button class="secondary-button"><img src="~/assets/images/icon-zalo.png" alt="Zalo"> ZALO CỦA VIÊN</button></a>
             </div>
+
             <div class="button-row">
                 <a href="#"><button class="secondary-button"><img src="~/assets/images/icon-gmail.png" alt="Email"> MAIL CỦA VIÊN</button></a>
             </div>
+
             <div class="button-row">
                 <a href="#"><button class="secondary-button"><img src="~/assets/images/icon-facebook.png" alt="Facebook"> FACEBOOK CỦA VIÊN</button></a>
             </div>
@@ -249,6 +251,7 @@
         </div>
         </section>
 
+
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 var copyableElements = document.querySelectorAll(".copyable");
@@ -314,18 +317,43 @@
             });
         </script>
 
+        <script>
+            // Get the modal
+            var modal = document.getElementById("shareModal");
+
+            // Get the button that opens the modal
+            var btn = document.querySelector(".share-icon img");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks the button, open the modal
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
 
 </body>
 </html>
-
-
 
 <style>
 
     .share-icon {
         position: absolute;
         top: 150px;
-        right: 450px;
+        right: 800px;
         background-color: white; /* Optional: Add a background to make it more visible */
         border-radius: 50%;
         padding: 5px;
