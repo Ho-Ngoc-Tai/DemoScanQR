@@ -194,11 +194,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Content Include="Content\index\index.css" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\QRCodeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CardModel.cs" />
     <Compile Include="Models\QRDatabaseContext.cs" />
     <Compile Include="Models\QRGenerator.cs" />
     <Compile Include="Models\QRPath.cs" />
@@ -208,11 +210,11 @@
     <Content Include="assets\images\achievement-icon.png" />
     <Content Include="assets\images\goal-icon.png" />
     <Content Include="assets\images\icon-check-circle.png" />
+    <Content Include="assets\images\icon-gmail.png" />
     <Content Include="assets\images\icon-mbbank.png" />
     <Content Include="assets\images\icon-acb.png" />
     <Content Include="assets\images\icon-birthday.png" />
     <Content Include="assets\images\icon-facebook.png" />
-    <Content Include="assets\images\icon-gmail.png" />
     <Content Include="assets\images\icon-location.png" />
     <Content Include="assets\images\icon-message.png" />
     <Content Include="assets\images\icon-phone.png" />
@@ -225,6 +227,7 @@
     <Content Include="assets\images\main.jpg" />
     <Content Include="assets\images\relationship-icon.png" />
     <Content Include="assets\images\skill-icon.png" />
+    <Content Include="assets\images\SunHitech_Logo.png" />
     <Content Include="assets\images\VanY_Logo.png" />
     <Content Include="Content\assets\bg-card.jpg" />
     <Content Include="Content\assets\bg-card2.jpg" />
@@ -232,7 +235,6 @@
     <Content Include="Content\assets\bg-card4.jpg" />
     <Content Include="Content\assets\bg-card5.jpg" />
     <Content Include="Content\assets\bg-card6.jpg" />
-    <Content Include="Content\assets\icon-gmail.png" />
     <Content Include="Content\assets\icon.png" />
     <Content Include="Content\assets\logo.png" />
     <Content Include="Content\assets\QR.png" />

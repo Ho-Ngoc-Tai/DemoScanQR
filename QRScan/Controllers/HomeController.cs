@@ -12,7 +12,21 @@ namespace QRScan.Controllers
         private QRDatabaseContext db = new QRDatabaseContext();
         public ActionResult Index()
         {
-            return View();
+            // Gán URL của trang view NameCard.cshtml
+            string viewUrl = Url.Action("index", "Home", null, Request.Url.Scheme);
+
+            QRGenerator generator = new QRGenerator();
+            byte[] qrCodeBytes = generator.GenerateQRCode(viewUrl);
+            string qrCodeBase64 = Convert.ToBase64String(qrCodeBytes);
+            ViewBag.QRCodeImage = "data:image/png;base64," + qrCodeBase64;
+
+            var cards = new List<CardModel>
+            {
+                new CardModel { QRCodeImage = "~/Content/assets/icon.png", Title = "Card 1", Content = "Content 1" },
+                new CardModel { QRCodeImage = "~/Content/assets/icon.png", Title = "Card 2", Content = "Content 2" },
+                new CardModel { QRCodeImage = "~/Content/assets/icon.png", Title = "Card 3", Content = "Content 3" }
+            };
+            return View(cards);
         }
 
         public ActionResult About()
@@ -50,10 +64,27 @@ namespace QRScan.Controllers
             QRGenerator generator = new QRGenerator();
             byte[] qrCodeBytes = generator.GenerateQRCode(fixedUrl);
             string qrCodeBase64 = Convert.ToBase64String(qrCodeBytes);
-            ViewBag.QRCodeImage = "data:image/png;base64," + qrCodeBase64;
+
+            // Kiểm tra xem model có null không
+            var model = new CardModel(); // Thay bằng cách khởi tạo model thích hợp
+            model.QRCodeImage = "data:image/png;base64," + qrCodeBase64;
+            ViewBag.QRCodeImage = model.QRCodeImage;
 
             return View();
         }
+
+        //public ActionResult QrGenerate()
+        //{
+        //    // Gán URL cố định trong code
+        //    string fixedUrl = "https://github.com/Ho-Ngoc-Tai";
+
+        //    QRGenerator generator = new QRGenerator();
+        //    byte[] qrCodeBytes = generator.GenerateQRCode(fixedUrl);
+        //    string qrCodeBase64 = Convert.ToBase64String(qrCodeBytes);
+        //    ViewBag.QRCodeImage = "data:image/png;base64," + qrCodeBase64;
+
+        //    return View();
+        //}
 
         public ActionResult RedirectAfterScan(string userId)
         {
