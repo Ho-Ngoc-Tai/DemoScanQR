@@ -1,13 +1,27 @@
-﻿@keyframes rotateCard {
-    0% {
-        transform: rotateY(0deg);
-    }
+﻿
 
-    100% {
-        transform: rotateY(360deg);
-    }
+/* CSS cho khung màu xám */
+.selected {
+    border: 2px solid transperant;
+    border-radius: 30px;
+    background: #e0e0e0;
+    height: 35px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-around;  
+    align-items: center;  
+    flex-wrap: wrap;  
+}
+
+.card-item {
+    flex: 1;  
+    max-width: 30%;  
+    box-sizing: border-box;  
+    padding-right: 50px;
 }
 
 .card {
-    animation: rotateCard 5s infinite linear;
+    transition: transform 1s linear;
 }

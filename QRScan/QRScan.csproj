@@ -201,6 +201,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CardModel.cs" />
+    <Compile Include="Models\Navbar.cs" />
     <Compile Include="Models\QRDatabaseContext.cs" />
     <Compile Include="Models\QRGenerator.cs" />
     <Compile Include="Models\QRPath.cs" />
@@ -255,6 +256,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\card\card.css" />
+    <Content Include="Content\Navbar\Navbar.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -294,6 +296,7 @@
     <Content Include="Views\Home\RedirectAfterScan.cshtml" />
     <Content Include="Views\Home\CardView.cshtml" />
     <Content Include="Views\Home\NameCard.cshtml" />
+    <Content Include="Views\Home\Navbar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
