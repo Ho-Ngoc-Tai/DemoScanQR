@@ -12,13 +12,17 @@
     <title>Multiple Cards</title>
     <link rel="stylesheet" href="~/Content/card/card.css">
     <link rel="stylesheet" href="~/Content/index/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <link rel="stylesheet" href="~/Content/Navbar/Navbar.css">
+    <link rel="stylesheet" href="~/Content/Contact/Contact.css">
     <style>
         body {
             background-image: url("https://img.freepik.com/free-vector/gradient-black-background-with-golden-textures_23-2149160942.jpg?t=st=1718175353~exp=1718178953~hmac=b94da6ba97e6e69610a05c2068db14600db824285e0826a12823220bac263aae&w=1920") !important;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
         }
 
         .progress-container {
@@ -35,21 +39,39 @@
             background: #4caf50;
             width: 0%;
         }
+
+        .contact-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1; /* Make sure it is below other content */
+        }
+
+        .content-container {
+            position: relative;
+            z-index: 2;
+        }
     </style>
 </head>
 <body>
-    <div class="progress-container">
-        <div class="progress-bar" id="progressBar"></div>
+    <div class="contact-container">
+        @Html.Partial("Contact")
     </div>
-
-    @Html.Partial("Navbar")
-    <div class="cards-container">
-        @foreach (var card in Model)
-        {
-            <div class="card-item">
-                @Html.Partial("CardView", card)
-            </div>
-        }
+    <div class="content-container">
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        @Html.Partial("Navbar")
+        <div class="cards-container">
+            @foreach (var card in Model)
+            {
+                <div class="card-item">
+                    @Html.Partial("CardView", card)
+                </div>
+            }
+        </div>
     </div>
 
     <script>

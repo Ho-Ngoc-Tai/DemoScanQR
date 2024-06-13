@@ -49,6 +49,7 @@ body {
     transform: rotateY(180deg);
 }
 
+/*Card1*/
 .card__front,
 .card__back {
     position: absolute;

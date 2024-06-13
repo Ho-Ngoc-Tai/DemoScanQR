@@ -194,6 +194,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Content Include="Content\assets\background-2.jpg" />
+    <Content Include="Content\Contact\Contact.css" />
     <Content Include="Content\index\index.css" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\QRCodeController.cs" />
